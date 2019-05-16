@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+// import Container from 'react-bootstrap/Container';
+// import Row from 'react-bootstrap/Row';
+// import Col from 'react-bootstrap/Col';
 
 class CoinUsd extends Component {
     
@@ -29,15 +29,12 @@ class CoinUsd extends Component {
     render() { 
 
         return ( 
-            <div>
-                <div>: </div>
-                <Container>
-                  <Row>
-                    <Col>{this.state.name}</Col>
-                    <Col>{this.state.usd}</Col>
-                  </Row>
-              </Container>;
-            </div>
+            <React.Fragment>
+              <div className="row">
+                <div className="col">{this.state.name}</div>
+                <div className="col">{this.state.usd}</div>
+              </div>
+            </React.Fragment>
          );
     }
 }
