@@ -1,43 +1,21 @@
 import React, { Component } from "react";
-import CoinUsd from "./CoinUsd";
+import logo from "./logo.svg";
 import "./App.css";
 
-const coinList = [
-  "bitcoin",
-  "ripple",
-  "ethereum",
-  "neo",
-  "ong",
-  "ontology"
-]
-
 class App extends Component {
-
-  state = {
-    "portfolioTotal": 0
-  }
-
   render() {
     return (
-      <div className="App container-fluid">
-      
-        <div className="row">
-          <div className="col">&nbsp;</div>
-          <div className="col text-right font-weight-bold">USD</div>
-          <div className="col text-right font-weight-bold">Qty</div>
-          <div className="col text-right font-weight-bold">Subtotal</div>
+      <div className="App">
+        <div className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h2>Welcome to React</h2>
         </div>
-        {coinList.map(coin => <CoinUsd key={coin} coinId={coin} quantity={42} />)}
-        <div className="row">
-          <div className="col">&nbsp;</div>
-          <div className="col">&nbsp;</div>
-          <div className="col">&nbsp;</div>
-          <div className="col text-right font-weight-bold">{this.state.portfolioTotal}</div>
-        </div>
+        <p className="App-intro">
+          To get started, edit <code>src/App.js</code> and save to reload.
+        </p>
       </div>
     );
   }
 }
-
 
 export default App;
