@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-//import logo from "./logo.svg";
 import CoinUsd from "./CoinUsd";
 import "./App.css";
 
@@ -9,13 +8,18 @@ const coinList = [
   "ethereum",
   "neo",
   "ong",
-  "ont"
+  "ontology"
 ]
 
 class App extends Component {
+
+  state = {
+    "portfolioTotal": 0
+  }
+
   render() {
     return (
-      <div className="App">
+      <div className="App container-fluid">
       
         <div className="row">
           <div className="col">&nbsp;</div>
@@ -24,13 +28,16 @@ class App extends Component {
           <div className="col text-right font-weight-bold">Subtotal</div>
         </div>
         {coinList.map(coin => <CoinUsd key={coin} coinId={coin} quantity={42} />)}
-        <CoinUsd coinId={'bitcoin'} quantity={42} />
-        <CoinUsd coinId={'ripple'} quantity={42} />
-        <CoinUsd coinId={'ethereum'} quantity={42} />
-        {console.log(coinList)}
+        <div className="row">
+          <div className="col">&nbsp;</div>
+          <div className="col">&nbsp;</div>
+          <div className="col">&nbsp;</div>
+          <div className="col text-right font-weight-bold">{this.state.portfolioTotal}</div>
+        </div>
       </div>
     );
   }
 }
+
 
 export default App;
